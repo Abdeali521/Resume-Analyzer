@@ -42,27 +42,7 @@ View similarity score and extracted skills.
 
 7. HIGH-LEVEL ARCHITECTURE DIAGRAM
 
-
-              +---------------------+                     
-              |   User Interface     |         <--- HTML/CSS/JS frontend
-              +---------------------+                     
-                       |                       
-                       v
-              +---------------------+                    
-              |  Backend (API Layer) |         <--- Flask/Django backend
-              |    (Match Scorer,    |
-              |     Skill Extractor) |
-              +---------------------+
-                       |                       
-                       v
-              +---------------------+                     
-              |     ML/NLP Models    |         <--- Trained models (BERT, spaCy, etc.)
-              +---------------------+        
-                       |
-                       v
-              +---------------------+
-              |     Database        |         <--- Store resumes, job descriptions, logs
-              +---------------------+
+![ChatGPT Image Apr 23, 2025, 11_22_07 AM](https://github.com/user-attachments/assets/7982f184-e634-431b-8386-11d8ce3d95a5)
 
    
 DETAILED MODEL ARCHITECTURE
