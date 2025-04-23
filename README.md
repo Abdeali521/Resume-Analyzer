@@ -15,7 +15,7 @@ Classification (Optional): Use a binary classifier to categorize resumes as “f
 
 4. ML/NLP MODEL
 Model 1 – Resume-Job Match Scorer:
-Uses transformer-based models like BERT, RoBERTa, or SBERT to calculate semantic similarity.
+TF-IDF (Term Frequency-Inverse Document Frequency) and cosine similarity for matching resumes with job descriptions. That’s a traditional/basic NLP
 
 Model 2 – Skill Extraction:
 Utilizes spaCy NER or a fine-tuned NER model to extract relevant skills, education, and experience.
