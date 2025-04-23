@@ -44,25 +44,7 @@ View similarity score and extracted skills.
 
 ![ChatGPT Image Apr 23, 2025, 11_22_07 AM](https://github.com/user-attachments/assets/7982f184-e634-431b-8386-11d8ce3d95a5)
 
-   
-DETAILED MODEL ARCHITECTURE
-Resume-Job Match Scorer (BERT-based):
 
-Input: Resume and job description text.
-
-Output: A similarity score (0 to 1).
-
-Preprocessing: Tokenization, truncation, padding.
-
-Model: Fine-tuned BERT or SBERT.
-
-Skill Extraction (NER-based):
-
-Input: Resume text.
-
-Output: List of extracted skills (e.g., "Python", "Machine Learning").
-
-Model: spaCy NER or fine-tuned model.
 
 8.EXAMPLE WORKFLOW
 User uploads resume and job description.
