@@ -31,7 +31,7 @@ Endpoints Include:
 /extract_skills: Extract skills from the resume text.
 
 6. FRONTEND (UI)
-Created using React.
+Created using Html,Js,CSS.
 User Interaction:
 
 Upload resume (file or text).
