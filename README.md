@@ -1,64 +1,46 @@
-1. Data Collection and Preprocessing:
+1. DATA COLLECTION AND PREPROCESSING
 Input: Resumes (in different formats like PDF, DOCX, plain text) and job descriptions.
+Processing: Convert resumes and job descriptions into text (using libraries like PyPDF2 or python-docx).
+Preprocessing: Clean the data by removing irrelevant characters, extra spaces, stop words, and applying tokenization.
 
-Processing: Convert resumes and job descriptions into text (for PDFs or DOCX, use libraries like PyPDF2 or python-docx).
+2. FEATURE EXTRACTION
+Skills Extraction: Use NLP techniques like Named Entity Recognition (NER) or keyword extraction to pull key skills, education, experience, etc.
+Models: Use pre-trained models like spaCy’s NER or custom fine-tuned models for skill recognition.
+Text Vectorization: Represent text data using TF-IDF, Word2Vec, GloVe, or FastText.
+Resume Parsing: Extract structured data like job titles, companies, duration, education, and skills.
 
-Preprocessing: Clean the data (removing irrelevant characters, extra spaces, stop words, and applying tokenization).
+3. SIMILARITY SCORING (RESUME-JOB MATCH)
+Cosine Similarity: Compare vectorized resume and job description using cosine similarity to determine the match.
+Classification (Optional): Use a binary classifier to categorize resumes as “fit” or “not a fit.”
 
-2. Feature Extraction:
-Skills Extraction: Extract key skills, education, experience, and other relevant features using NLP techniques like Named Entity Recognition (NER) or Keyword Extraction.
+4. ML/NLP MODEL
+Model 1 – Resume-Job Match Scorer:
+Uses transformer-based models like BERT, RoBERTa, or SBERT to calculate semantic similarity.
 
-Models: You can use pre-trained models like spaCy's NER or custom models fine-tuned for skill recognition.
+Model 2 – Skill Extraction:
+Utilizes spaCy NER or a fine-tuned NER model to extract relevant skills, education, and experience.
 
-Text Vectorization: Represent the resumes and job descriptions as feature vectors.
+5. BACKEND (API)
+Built using Flask or Django.
+Endpoints Include:
 
-TF-IDF (Term Frequency-Inverse Document Frequency) or word embeddings (using Word2Vec, GloVe, or FastText) can be used to create numerical representations of the text.
+/upload_resume: Upload and process resumes.
 
-Resume Parsing: Extract structured data from resumes, including job titles, companies, duration, education, and skills.
+/get_match_score: Compute and return the resume-job match score.
 
-3. Similarity Scoring (Resume-Job Match):
-Cosine Similarity or Similarity Score: Once you have the vectorized representation of both the resume and the job description, calculate a cosine similarity score to determine how closely the resume matches the job description.
+/extract_skills: Extract skills from the resume text.
 
-Classification: If you want to classify resumes based on suitability (e.g., fit vs. not a fit), you can use a binary classifier to predict whether the resume is a good match for a given job.
+6. FRONTEND (UI)
+Created using React.
+User Interaction:
 
-4. ML/NLP Model:
-Model 1: Resume-Job Match Scorer:
+Upload resume (file or text).
 
-This can be based on transformer-based models like BERT, RoBERTa, or DistilBERT for calculating semantic similarity between the job description and the resume.
+Input or choose a job description.
 
-Fine-tune a pre-trained model using a dataset of job descriptions and corresponding resumes.
+View similarity score and extracted skills.
 
-You could also use pre-trained embeddings (e.g., SBERT from Sentence-BERT for semantic text similarity).
-
-Model 2: Skill Extraction:
-
-A model for extracting relevant skills, experience, education, and certifications from resumes. spaCy can be a great tool here, or you could fine-tune a Named Entity Recognition (NER) model using labeled data.
-
-5. Backend (API):
-Flask/Django: Use a backend framework to expose APIs that handle resume processing, job description input, and scoring.
-
-Endpoints:
-
-/upload_resume: Endpoint to upload and process resumes.
-
-/get_match_score: Endpoint to calculate and return the match score between a resume and a job description.
-
-/extract_skills: Endpoint to extract skills from the resume.
-
-6. Frontend (UI):
-React: A simple user interface where users can upload resumes and job descriptions, view match scores, and see extracted skills.
-
-Interaction:
-
-Users upload their resume (e.g., as a file or pasted text).
-
-Users input or select the job description.
-
-The app displays the similarity score and extracted features such as skills and experience.
-
-High-Level Architecture Diagram
-Here’s a simplified model architecture:
-
+7. HIGH-LEVEL ARCHITECTURE DIAGRAM
 sql
 Copy
 Edit
@@ -82,39 +64,53 @@ Edit
               +---------------------+
               |     Database        |         <--- Store resumes, job descriptions, logs
               +---------------------+
-Detailed Model Architecture
-Model 1: Resume-Job Match Scorer (BERT-based or Similarity-based)
+DETAILED MODEL ARCHITECTURE
+Resume-Job Match Scorer (BERT-based):
 
-Input: Resume text and job description text.
+Input: Resume and job description text.
 
-Output: A similarity score between 0 and 1, where 1 indicates a perfect match.
+Output: A similarity score (0 to 1).
 
-Preprocessing: Tokenization, padding, and truncation.
+Preprocessing: Tokenization, truncation, padding.
 
-Model: Fine-tuned BERT or SBERT (Sentence-BERT), which understands semantic meaning.
+Model: Fine-tuned BERT or SBERT.
 
-Model 2: Skill Extraction (NER or Custom Classifier)
+Skill Extraction (NER-based):
 
 Input: Resume text.
 
-Output: A list of extracted skills (e.g., "Python", "Machine Learning", "Data Analysis").
+Output: List of extracted skills (e.g., "Python", "Machine Learning").
 
-Model: spaCy NER (Named Entity Recognition) or a fine-tuned model to identify and extract skills.
+Model: spaCy NER or fine-tuned model.
 
-Example Workflow:
-Step 1: User uploads resume and job description.
+EXAMPLE WORKFLOW
+User uploads resume and job description.
 
-Step 2: Preprocess the text (tokenization, cleaning).
+Resume and JD text are cleaned and preprocessed.
 
-Step 3: Extract skills and features using NER.
+Skills are extracted using NER.
 
-Step 4: Compute similarity score using the trained ML model.
+Similarity score is calculated with ML model.
 
-Step 5: Display results (match score, extracted skills).
+Results are displayed: match score + suggested improvements.
 
-Next Steps:
-Data Collection: Gather or create a dataset of resumes and job descriptions for training.
+NEXT STEPS
+Data Collection: Build or find datasets of resumes and job descriptions.
 
-Model Training: Fine-tune pre-trained models on your dataset to improve the accuracy of skill extraction and resume-job match scoring.
+Model Training: Fine-tune models for skill extraction and semantic similarity.
 
-Integration: Connect the frontend and backend using API endpoints, making sure to handle file uploads and return the results.
+Integration: Link frontend and backend using RESTful APIs.
+
+BENEFITS
+Helps job seekers tailor resumes for specific job roles.
+
+Provides actionable suggestions to improve resume quality.
+
+Automates the tedious resume screening process.
+
+Improves chances of selection through AI-driven analysis.
+
+Offers recruiters a quick overview of candidate-job fit.
+
+
+
