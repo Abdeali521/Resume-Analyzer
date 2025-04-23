@@ -44,7 +44,7 @@ View similarity score and extracted skills.
 
 
               +---------------------+                     
-              |   User Interface     |         <--- React frontend
+              |   User Interface     |         <--- HTML/CSS/JS frontend
               +---------------------+                     
                        |                       
                        v
