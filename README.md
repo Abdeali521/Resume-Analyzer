@@ -84,7 +84,7 @@ Output: List of extracted skills (e.g., "Python", "Machine Learning").
 
 Model: spaCy NER or fine-tuned model.
 
-EXAMPLE WORKFLOW
+8.EXAMPLE WORKFLOW
 User uploads resume and job description.
 
 Resume and JD text are cleaned and preprocessed.
@@ -95,14 +95,14 @@ Similarity score is calculated with ML model.
 
 Results are displayed: match score + suggested improvements.
 
-NEXT STEPS
+9.STEPS
 Data Collection: Build or find datasets of resumes and job descriptions.
 
 Model Training: Fine-tune models for skill extraction and semantic similarity.
 
 Integration: Link frontend and backend using RESTful APIs.
 
-BENEFITS
+10.BENEFITS
 Helps job seekers tailor resumes for specific job roles.
 
 Provides actionable suggestions to improve resume quality.
