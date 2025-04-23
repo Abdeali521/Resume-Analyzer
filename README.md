@@ -41,9 +41,8 @@ Input or choose a job description.
 View similarity score and extracted skills.
 
 7. HIGH-LEVEL ARCHITECTURE DIAGRAM
-sql
-Copy
-Edit
+
+
               +---------------------+                     
               |   User Interface     |         <--- React frontend
               +---------------------+                     
@@ -64,6 +63,8 @@ Edit
               +---------------------+
               |     Database        |         <--- Store resumes, job descriptions, logs
               +---------------------+
+
+   
 DETAILED MODEL ARCHITECTURE
 Resume-Job Match Scorer (BERT-based):
 
